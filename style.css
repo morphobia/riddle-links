@@ -1,0 +1,201 @@
+html, body{
+  height: 100%;
+  -webkit-text-size-adjust: none;
+  background: #aef;
+}
+
+/* メニュー内容 */
+
+nav{
+  display: block;
+  width: 220px;
+  position: fixed;
+  background-color: #efefef;
+  top: 90px;
+  left: -300px;
+  bottom: 0;
+  transition: all 0.5s;
+  z-index: 3;
+  opacity: 0;
+  overflow: auto;
+}
+
+.open nav{
+  left: 0;
+  opacity: 1;
+}
+
+#Inner{
+  padding: 25px;
+}
+
+#Inner ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.non_selected ul{
+  display: none;
+}
+
+.selected ul{
+  display: block;
+}
+
+#Inner ul li{
+  margin: 0;
+  border-bottom: 1px solid #333;
+}
+
+#Inner ul li a{
+  display: block;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  padding: 1rem;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+#Inner ul li a:hover{
+  background-color: #e4e4e4;
+}
+
+header{
+  position: fixed;
+  width: 100vw;
+  height: 90px;
+  background-color: white;
+  z-index: 2;
+  top: 0;
+}
+
+/* ハンバーガーメニューの描画 */
+
+#ToggleButton{
+  display: block;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  width: 30px;
+  height: 30px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+#ToggleButton span{
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.5s;
+  border-radius: 4px;
+}
+
+#ToggleButton :nth-child(1){
+  top: 4px;
+}
+
+#ToggleButton :nth-child(2){
+  top: 14px;
+}
+
+#ToggleButton :nth-child(3){
+  top: 14px;
+}
+
+#ToggleButton :nth-child(4){
+  top: 24px;
+}
+
+.open #ToggleButton :nth-child(1){
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.open #ToggleButton :nth-child(2){
+  transform: rotate(-135deg);
+}
+
+.open #ToggleButton :nth-child(3){
+  transform: rotate(135deg);
+}
+
+.open #ToggleButton :nth-child(4){
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+#Icon{
+  display: block;
+  position: fixed;
+  top: 20px;
+  left: 90px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+header h1{
+  display: block;
+  position: fixed;
+  line-height: 90px;
+  left: 160px;
+}
+
+main{
+  margin-top: 90px;
+  padding: 3vw;
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 1280px) {
+  .cards{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards{
+    grid-template-columns: 1fr;
+  }
+}
+
+.card{
+  border-radius: .5rem;
+  background-color: #ddd;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px rgba(0,0,0,.1);
+  margin: 10px;
+}
+
+.card_image{
+  aspect-ratio: 16/9;
+}
+
+.card_image img{
+  width: 100%;
+  object-fit: cover;
+}
+
+.card_title{
+  text-align: center;
+}
+
+.card_link{
+  margin: 10px auto 20px;
+}
+
+.card_link img{
+  height: 36px;
+  border: 0;
+  border-radius: 5px;
+}
