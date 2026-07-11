@@ -140,11 +140,15 @@ header{
   object-fit: cover;
 }
 
-header h1{
+header p{
   display: block;
   position: fixed;
   line-height: 90px;
   left: 160px;
+  font-size: clamp(0px, calc(9vw - 15px), 32px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 main{
